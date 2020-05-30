@@ -1,10 +1,3 @@
-'''
-#This example demonstrates the use of Convolution1D for text classification.
-
-Gets to 0.89 test accuracy after 2 epochs. </br>
-90s/epoch on Intel i5 2.4Ghz CPU. </br>
-10s/epoch on Tesla K40 GPU.
-'''
 from __future__ import print_function
 
 from keras.preprocessing import sequence
@@ -15,17 +8,6 @@ from keras.layers import Conv1D, GlobalMaxPooling1D
 from keras.datasets import imdb
 
 # set parameters:
-max_features = 500
-maxlen = 400
-batch_size = 32
-embedding_dims = 5
-filters = 25
-kernel_size = 3
-hidden_dims = 250
-epochs = 2
-
-'''
-# More real parameters:
 max_features = 5000
 maxlen = 400
 batch_size = 32
@@ -33,8 +15,8 @@ embedding_dims = 50
 filters = 250
 kernel_size = 3
 hidden_dims = 250
-epochs = 2
-'''
+epochs = 3
+
 
 
 print('Loading data...')
@@ -85,3 +67,14 @@ model.fit(x_train, y_train,
           epochs=epochs,
           validation_data=(x_test, y_test))
 
+#########################################Maximum Accuracy
+#Maximum accuracy =93.75 for Epoch 3 Sample 32/25000
+#Other Parameters
+# max_features = 5000
+# maxlen = 400
+# batch_size = 32
+# embedding_dims = 50
+# filters = 250
+# kernel_size = 3
+# hidden_dims = 250
+# epochs = 3
